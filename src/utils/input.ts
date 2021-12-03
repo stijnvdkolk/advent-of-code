@@ -15,8 +15,9 @@ const mapToNumberIfNecessary = (input: string[]) => {
   return input;
 };
 
-export const parseInput = (input: string) => {
+export function parseInput(input: string, keepString: true): string[];
+export function parseInput(input: string, keepString = false) {
   const inputArray = input.split(getDelimiter(input));
   const trimmed = inputArray.map((e) => e.trim());
-  return mapToNumberIfNecessary(trimmed);
-};
+  return keepString ? trimmed : mapToNumberIfNecessary(trimmed);
+}

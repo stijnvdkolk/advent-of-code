@@ -1,6 +1,9 @@
-export const logAnswer = (answer: any) => {
+export const logAnswer = (
+  dayAndPart: `Day ${number} - Part ${1 | 2}`,
+  answer: any,
+) => {
   process.stdout.write(`\n\n-----------------
-Answer: ${answer}
+${dayAndPart} - Answer: ${answer}
 -----------------\n\n`);
 };
 
